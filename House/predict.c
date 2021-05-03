@@ -45,11 +45,11 @@ void predictPriceByMostRelate(Node* ptr) {
 		printf("r: %.6f, Î¬¶ÈÏÂ±ê£º%d\n", r[i].r, r[i].index);
 	}
 
-	printf("\nInput data with these dimensions - :");
+	printf("\nInput data with these dimensions - ");
 	for (int i = 0; i < 4; i++) {
 		printf("%d ", r[i].index);
 	}
-	printf("\n");
+	printf(" :\n");
 
 	Node* p = (Node*)malloc(sizeof(Node));
 	if (!p) exit(-1);

@@ -4,6 +4,7 @@
 
 extern Node* readData(int* num, Node* ptr);
 extern void normalize(Node* ptr, int start, int end);
+extern void printData(Node* ptr);
 
 static void printMaxMin(double* max, double* min) {
 	for (int i = 0; i <= Dimension; i++) {
@@ -38,11 +39,13 @@ void getMaxMin(Node* ptr) { // 求数据集中各维度的最值，以便归一化
 	printMaxMin(max, min);
 }
 
-
 void init() {
 	ptr = readData(&NUM, ptr);
 	getMaxMin(ptr);
 	normalize(ptr, 0, NUM);
+	// ============
+	printf("读取并归一化数据后所得结果：\n");
+	printData(ptr);
 
 	temp = (double*)malloc(Dimension * sizeof(double));
 	if (!temp) exit(-1);

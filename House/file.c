@@ -6,11 +6,10 @@
 
 void printData(Node* ptr) {
 	for (int i = 0; i < NUM; i++) {
-		printf("%d:\n", i);
 		for (int j = 0; j < Dimension; j++) {
 			printf("%.6lf ", ptr[i].data[j]);
 		}
-		printf("实际房价：%.6lf", ptr[i].price);
+		printf("实际房价：%.6lf\n", ptr[i].price);
 	}
 }
 
