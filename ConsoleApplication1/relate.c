@@ -6,7 +6,7 @@ int compare(const void* avg1, const void* avg2)
 {
 	rNode* a = (rNode*)avg1;
 	rNode* b = (rNode*)avg2;
-	return a->r > b->r ? -1 : 1;
+	return fabs(a->r) > fabs(b->r) ? -1 : 1;
 }
 
 rNode* getRelateOrderByDec(Node* ptr)
@@ -62,7 +62,7 @@ rNode* getRelateOrderByDec(Node* ptr)
 		onlyy += ((ptr + i)->price - avgy)* ((ptr + i)->price - avgy);
 	}
 
-	a[0].r = -1;
+	a[0].r = 0;
 	for (i = 1; i < Dimension; i++)  //算出对应x的r
 	{
 		a[i].r = (realx[i]) / sqrt(onlyx[i] * onlyy);

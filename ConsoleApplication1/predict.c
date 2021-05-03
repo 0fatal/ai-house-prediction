@@ -34,11 +34,11 @@ void predictPrice() {
 	}
 	p->price = p->price * (max[Dimension] - min[Dimension]) + min[Dimension]; // 价格反归一
 	printf("price = %f\n", p->price);
+	free(p);
 }
 
 void predictPriceByMostRelate(Node* ptr) {
 	rNode* r = getRelateOrderByDec(ptr); // 获取降序的最相关系数下标
-	double sum = 0;
 
 	printf("\n四个最相关系数：\n");
 	for (int i = 0; i < 4; i++) {
@@ -47,7 +47,7 @@ void predictPriceByMostRelate(Node* ptr) {
 
 	printf("\nInput data with these dimensions - :");
 	for (int i = 0; i < 4; i++) {
-		printf("%d ", r[i].index + 1);
+		printf("%d ", r[i].index);
 	}
 	printf("\n");
 
@@ -70,5 +70,6 @@ void predictPriceByMostRelate(Node* ptr) {
 	p->price = p->price * (max[Dimension] - min[Dimension]) + min[Dimension]; // 价格反归一
 	printf("price = %f\n", p->price);
 	free(r);
+	free(p);
 }
 
